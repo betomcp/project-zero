@@ -1,0 +1,23 @@
+<p>data-biding works!</p>
+<p>{{nome}} tem {{idade}} anos</p>
+<p>{{nome}} tem mais de 12 anos?</p>
+<p>{{idade > 12}}</p>
+<p>{{idade + 10}}</p>
+
+<hr>
+<hr>
+
+<h2>Property Binding</h2>
+<button [disabled]="ckBtn">Botão</button>
+
+<img [src]="imgSrc" alt="">
+
+
+<button (click)="btnClick($event)">Mudar foto</button>
+
+<hr>
+
+<input [(ngModel)]="nome">
+{{nome}}
+
+<hr>

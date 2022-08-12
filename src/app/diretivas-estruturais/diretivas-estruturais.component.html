@@ -1,0 +1,32 @@
+<p *ngIf="true">true</p>
+<p *ngIf="condition; else elseBlock">condition</p>
+
+<ng-template #elseBlock>
+  <p>
+    false
+  </p>
+</ng-template>
+
+<hr>
+<hr>
+
+<ul>
+  <li *ngFor="let item of list; let i = index" (click)="deletOnClick(i)">{{item.nome}}</li>
+</ul>
+<button (click)="addOnClick()">Add</button>
+
+<hr>
+
+<div [ngSwitch]="'beto'">
+  <p *ngSwitchCase="'beto'">
+    Beto
+  </p>
+
+  <p *ngSwitchCase="'tomi'">
+    tomi
+  </p>
+
+  <p *ngSwitchDefault>
+    default
+  </p>
+</div>

@@ -1,0 +1,61 @@
+
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
+  Nome:
+  <label for="nome">
+    <input type="text" name="nome" #nome="ngModel" [ngModel]="nome.value" required>
+    <span *ngIf="nome.dirty && nome.touched && nome.valid">
+      Invalid
+    </span>
+    --- {{nome.valid}} ---
+    --- {{nome.dirty}} ---
+    --- {{nome.touched}} ---
+  </label>
+  <label for="nome">
+    Masculino:
+    <input type="radio" name="sexo" value="Mascuino" ngModel>
+  </label>
+  <label for="nome">
+    Feminino:
+    <input type="radio" name="sexo" value="Feminino" ngModel>
+  </label>
+
+
+  <br>
+  <br>
+
+
+  <label for="nome">
+    Angular:
+    <input type="checkbox" name="Angular" ngModel>
+  </label>
+  <label for="nome">
+    React:
+    <input type="checkbox" name="React" ngModel>
+  </label>
+  <label for="nome">
+    Vue.js:
+    <input type="checkbox" name="Vue" ngModel>
+  </label>
+
+  <br>
+  <br>
+
+  <!-- é possível usar [value] ou [ngValue], o ngValue aceita um objeto, o value aceita apenas um valor, no caso seria
+    "item.comida" -->
+
+  <label for="nome">
+    <select name="comidas" ngModel>
+      <option value="">Selecione um alimento</option>
+      <option *ngFor="let item of listComidas" [ngValue]="item">
+        {{item.comida}}
+      </option>
+    </select>
+  </label>
+</form>
+
+{{form.value | json}}
+
+<br>
+<br>
+
+<button [disabled]="form.invalid" (click)="submitForm(form)">Enivar dados</button>

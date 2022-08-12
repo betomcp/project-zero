@@ -1,0 +1,17 @@
+<ng-content select="h1"></ng-content>
+
+<p [ngClass]="'active'">Diretivas Atributos</p>
+<hr>
+
+<p [ngClass]="{'active': valor, 'disable': !valor}">ng Class</p>
+
+<hr>
+
+<p [ngStyle]="{'height': height, 'background-color': 'black'}">ng Style</p>
+
+<input [(ngModel)]="nome">
+{{nome}}
+
+<ng-content select="h2"></ng-content>
+
+{{data | date: 'dd/MM/yyyy'}}
